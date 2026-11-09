@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chineland</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@500;800&display=swap" rel="stylesheet">
+<style>
+
+:root{--azul:#1D5FFD;--marinho:#0B1B4D;--amarelo:#FFD23F;--fundo:#F4F7FF;--texto:#0B1B4D;--suave:#55607F}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{font-family:Figtree,system-ui,sans-serif;background:var(--fundo);color:var(--texto);-webkit-font-smoothing:antialiased}
+.topo{background:var(--azul);color:#fff;padding:44px 16px 92px;text-align:center;position:relative;overflow:hidden}
+.topo::before,.topo::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
+.topo::before{width:260px;height:260px;left:-90px;top:-110px}
+.topo::after{width:180px;height:180px;right:-60px;bottom:-40px;background:rgba(255,210,63,.22)}
+.marca{font-family:"Bagel Fat One",Figtree,sans-serif;font-size:46px;letter-spacing:.5px;line-height:1;position:relative;z-index:1}
+.marca span{color:var(--amarelo)}
+.loja{display:inline-block;margin-top:14px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.16);font-weight:500;font-size:14px;position:relative;z-index:1}
+main{max-width:440px;margin:-60px auto 0;padding:0 16px 40px;position:relative;z-index:2}
+.card{background:#fff;border-radius:24px;padding:28px 22px;box-shadow:0 12px 32px rgba(11,27,77,.12)}
+h1{font-size:26px;font-weight:800;line-height:1.15}
+.sub{color:var(--suave);margin-top:8px;font-size:16px;line-height:1.45}
+.botoes{display:grid;gap:12px;margin-top:22px}
+a.btn{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;text-decoration:none;font-weight:800;font-size:17px;transition:transform .12s}
+a.btn:active{transform:scale(.98)}
+a.btn small{display:block;font-weight:500;font-size:13px;opacity:.85;margin-top:2px}
+a.btn svg{width:28px;height:28px;flex:none}
+.insta{background:linear-gradient(90deg,#833AB4,#E1306C 55%,#F77737);color:#fff}
+.google{background:var(--amarelo);color:var(--marinho)}
+.site{background:#fff;color:var(--azul);border:2px solid #D6E1FF}
+.rodape{text-align:center;color:var(--suave);font-size:13px;margin-top:22px}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="marca">Chine<span>land</span></div>
+  <div class="loja" id="loja" hidden></div>
+</header>
+<main>
+  <div class="card">
+    <h1>Valeu pela visita!</h1>
+    <p class="sub" id="sub">Siga a gente no Instagram e conte como foi sua experiência na loja.</p>
+    <div class="botoes">
+      <a class="btn insta" id="b-insta" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <span>Seguir no Instagram<small>@chineland.oficial</small></span>
+      </a>
+      <a class="btn google" id="b-google" target="_blank" rel="noopener" hidden>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>
+        <span>Avaliar no Google<small>Leva menos de 1 minuto</small></span>
+      </a>
+    </div>
+  </div>
+  <p class="rodape">Chineland · Grupo Gabriel</p>
+</main>
+<script>
+const DADOS = {"instagram": "https://www.instagram.com/chineland.oficial/", "site": "https://www.chineland.com.br/", "lojas": [{"slug": "rangel-2204", "nome": "Av. Rangel Pestana, 2204", "google": "https://search.google.com/local/writereview?placeid=ChIJe5RIfJ5ZzpQRl6cE0cPGzB4"}, {"slug": "cavalheiro-132", "nome": "Rua Cavalheiro, 132", "google": "https://search.google.com/local/writereview?placeid=ChIJQdoQgexZzpQR1Wmrs_vW35Y"}, {"slug": "barao-194", "nome": "Rua Barão de Ladário, 194", "google": "https://search.google.com/local/writereview?placeid=ChIJt764NOJYzpQRfKnqSPd0GHs"}, {"slug": "25marco-873", "nome": "Rua 25 de Março, 873", "google": "https://search.google.com/local/writereview?placeid=ChIJZ7LeP69ZzpQRb_HDNG3UqIg"}, {"slug": "25marco-1011", "nome": "Rua 25 de Março, 1011 – Loja 04", "google": "https://search.google.com/local/writereview?placeid=ChIJnVB-PABZzpQRBJTrbRwymMc"}, {"slug": "carneiro-47", "nome": "Ladeira General Carneiro, 47 – Loja 07", "google": "https://search.google.com/local/writereview?placeid=ChIJW-FzdPxZzpQR0VAbnt4vSME"}, {"slug": "cavalheiro-188", "nome": "Rua Cavalheiro, 188", "google": ""}, {"slug": "cavalheiro-196", "nome": "Rua Cavalheiro, 196", "google": ""}, {"slug": "marcolina-368", "nome": "Rua Maria Marcolina, 368", "google": "https://search.google.com/local/writereview?placeid=ChIJMVx-9CBZzpQR2B-nfo4wa4Y"}, {"slug": "marcolina-29", "nome": "Rua Maria Marcolina, 29", "google": ""}, {"slug": "rangel-2085", "nome": "Av. Rangel Pestana, 2085", "google": ""}, {"slug": "barao-365", "nome": "Rua Barão de Ladário, 365", "google": ""}, {"slug": "portogeral-52", "nome": "Ladeira Porto Geral, 52", "google": ""}, {"slug": "25marco-552", "nome": "Rua 25 de Março, 552", "google": ""}, {"slug": "treze-538", "nome": "Largo Treze de Maio, 538 – Loja 06", "google": ""}, {"slug": "gomescardim-144", "nome": "Rua Gomes Cardim, 144", "google": ""}, {"slug": "rangel-2098", "nome": "Av. Rangel Pestana, 2098", "google": "https://search.google.com/local/writereview?placeid=ChIJCbsKMh5ZzpQRid1y4S5YF1U"}, {"slug": "boavista-355", "nome": "Rua Boa Vista, 355 – Loja 05", "google": ""}, {"slug": "senhordospassos-205", "nome": "Rua Senhor dos Passos, 205 – Rio de Janeiro", "google": "https://search.google.com/local/writereview?placeid=ChIJWcF0dQB_mQAR7eART8y9m8U"}]};
+const slug = decodeURIComponent(location.hash.slice(1));
+const loja = DADOS.lojas.find(l => l.slug === slug);
+document.getElementById('b-insta').href = DADOS.instagram;
+if (loja) {
+  const el = document.getElementById('loja');
+  el.textContent = loja.nome; el.hidden = false;
+  if (loja.google) {
+    const g = document.getElementById('b-google');
+    g.href = loja.google; g.hidden = false;
+  } else {
+    document.getElementById('sub').textContent = 'Siga a gente no Instagram e acompanhe as novidades.';
+  }
+}
+</script>
+</body>
+</html>
